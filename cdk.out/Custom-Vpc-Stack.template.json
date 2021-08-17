@@ -1,0 +1,624 @@
+{
+  "Resources": {
+    "customvpcIdBA491B6F": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.82.0.0/20",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/Resource"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet1Subnet128217EA": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.82.0.0/24",
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PublicSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/Subnet"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet1RouteTable0E7B31DC": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/RouteTable"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet1RouteTableAssociation8E28AED0": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPublicSubnetSubnet1RouteTable0E7B31DC"
+        },
+        "SubnetId": {
+          "Ref": "customvpcIdPublicSubnetSubnet1Subnet128217EA"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/RouteTableAssociation"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet1DefaultRoute0EC5560B": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPublicSubnetSubnet1RouteTable0E7B31DC"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "customvpcIdIGW463B5CE1"
+        }
+      },
+      "DependsOn": [
+        "customvpcIdVPCGWD055D3E5"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/DefaultRoute"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet1EIPFC11F1F7": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/EIP"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet1NATGateway9067AFD7": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "SubnetId": {
+          "Ref": "customvpcIdPublicSubnetSubnet1Subnet128217EA"
+        },
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "customvpcIdPublicSubnetSubnet1EIPFC11F1F7",
+            "AllocationId"
+          ]
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/NATGateway"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet2SubnetB04ADD2F": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.82.1.0/24",
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PublicSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/Subnet"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet2RouteTable1C29A809": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/RouteTable"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet2RouteTableAssociation358ACE5C": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPublicSubnetSubnet2RouteTable1C29A809"
+        },
+        "SubnetId": {
+          "Ref": "customvpcIdPublicSubnetSubnet2SubnetB04ADD2F"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/RouteTableAssociation"
+      }
+    },
+    "customvpcIdPublicSubnetSubnet2DefaultRouteC9204EFE": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPublicSubnetSubnet2RouteTable1C29A809"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "customvpcIdIGW463B5CE1"
+        }
+      },
+      "DependsOn": [
+        "customvpcIdVPCGWD055D3E5"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/DefaultRoute"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet1Subnet165185F8": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.82.2.0/24",
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PrivateSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/Subnet"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet1RouteTableB40E25D1": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/RouteTable"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet1RouteTableAssociation841B4E7C": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPrivateSubnetSubnet1RouteTableB40E25D1"
+        },
+        "SubnetId": {
+          "Ref": "customvpcIdPrivateSubnetSubnet1Subnet165185F8"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/RouteTableAssociation"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet1DefaultRoute0E3EA2BC": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPrivateSubnetSubnet1RouteTableB40E25D1"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "customvpcIdPublicSubnetSubnet1NATGateway9067AFD7"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/DefaultRoute"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet2SubnetB77913AD": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.82.3.0/24",
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "PrivateSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/Subnet"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet2RouteTableBB5F1BEC": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/RouteTable"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet2RouteTableAssociation64FB16DF": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPrivateSubnetSubnet2RouteTableBB5F1BEC"
+        },
+        "SubnetId": {
+          "Ref": "customvpcIdPrivateSubnetSubnet2SubnetB77913AD"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/RouteTableAssociation"
+      }
+    },
+    "customvpcIdPrivateSubnetSubnet2DefaultRoute150583CD": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdPrivateSubnetSubnet2RouteTableBB5F1BEC"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "customvpcIdPublicSubnetSubnet1NATGateway9067AFD7"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/DefaultRoute"
+      }
+    },
+    "customvpcIdDBSubnetSubnet1SubnetBF4042A4": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.82.4.0/24",
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "DBSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated"
+          },
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1/Subnet"
+      }
+    },
+    "customvpcIdDBSubnetSubnet1RouteTable71C99E43": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1/RouteTable"
+      }
+    },
+    "customvpcIdDBSubnetSubnet1RouteTableAssociation79F86DC3": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdDBSubnetSubnet1RouteTable71C99E43"
+        },
+        "SubnetId": {
+          "Ref": "customvpcIdDBSubnetSubnet1SubnetBF4042A4"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1/RouteTableAssociation"
+      }
+    },
+    "customvpcIdDBSubnetSubnet2Subnet757E70B0": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.82.5.0/24",
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "DBSubnet"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated"
+          },
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2/Subnet"
+      }
+    },
+    "customvpcIdDBSubnetSubnet2RouteTableAB75FA80": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2/RouteTable"
+      }
+    },
+    "customvpcIdDBSubnetSubnet2RouteTableAssociation6AF7FE67": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "customvpcIdDBSubnetSubnet2RouteTableAB75FA80"
+        },
+        "SubnetId": {
+          "Ref": "customvpcIdDBSubnetSubnet2Subnet757E70B0"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2/RouteTableAssociation"
+      }
+    },
+    "customvpcIdIGW463B5CE1": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-Vpc-Stack/customvpcId"
+          },
+          {
+            "Key": "Owner",
+            "Value": "Esakkimuthu"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/IGW"
+      }
+    },
+    "customvpcIdVPCGWD055D3E5": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "customvpcIdBA491B6F"
+        },
+        "InternetGatewayId": {
+          "Ref": "customvpcIdIGW463B5CE1"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Vpc-Stack/customvpcId/VPCGW"
+      }
+    }
+  },
+  "Outputs": {
+    "CutomVpcId": {
+      "Value": {
+        "Ref": "customvpcIdBA491B6F"
+      },
+      "Export": {
+        "Name": "CutomVpc001"
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "version": "13.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Custom-Ec2-Stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://275239396717/ap-southeast-2",
+      "properties": {
+        "templateFile": "Custom-Ec2-Stack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/Custom-Ec2-Stack/Webserver/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverInstanceSecurityGroupB57716DA",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:215:30)",
+              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:38:34)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Ec2-Stack/Webserver/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverInstanceRole942CAF13",
+            "trace": [
+              "new Role (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:46:35)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Ec2-Stack/Webserver/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverInstanceProfile5CEA6CFC",
+            "trace": [
+              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:50:28)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Ec2-Stack/Webserver/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Webserver2D6E5D9A",
+            "trace": [
+              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:85:25)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Ec2-Stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-ebs:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664ebsC96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:134:15)",
+              "Function.valueForTypedStringParameter (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:208:21)",
+              "AmazonLinuxImage.getImage (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\machine-image.js:127:41)",
+              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:54:48)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Ec2-Stack/WebserverPublicIp": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverPublicIp",
+            "trace": [
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "Custom-Ec2-Stack"
+    }
+  }
+}

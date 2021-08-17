@@ -1,0 +1,7 @@
+README.md
+setup.py
+computeapp/computeapp.egg-info/PKG-INFO
+computeapp/computeapp.egg-info/SOURCES.txt
+computeapp/computeapp.egg-info/dependency_links.txt
+computeapp/computeapp.egg-info/requires.txt
+computeapp/computeapp.egg-info/top_level.txt

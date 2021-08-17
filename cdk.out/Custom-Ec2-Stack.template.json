@@ -1,0 +1,175 @@
+{
+  "Resources": {
+    "WebserverInstanceSecurityGroupB57716DA": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Custom-Ec2-Stack/Webserver/InstanceSecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow web Traffic in 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "TestInstance"
+          }
+        ],
+        "VpcId": "vpc-68ec040e"
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Ec2-Stack/Webserver/InstanceSecurityGroup/Resource"
+      }
+    },
+    "WebserverInstanceRole942CAF13": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ec2.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+              ]
+            ]
+          },
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AmazonS3ReadOnlyAccess"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "TestInstance"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Ec2-Stack/Webserver/InstanceRole/Resource"
+      }
+    },
+    "WebserverInstanceProfile5CEA6CFC": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "Roles": [
+          {
+            "Ref": "WebserverInstanceRole942CAF13"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-Ec2-Stack/Webserver/InstanceProfile"
+      }
+    },
+    "Webserver2D6E5D9A": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": "ap-southeast-2a",
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sdb",
+            "Ebs": {
+              "VolumeSize": "8",
+              "VolumeType": "io1",
+              "Iops": "400",
+              "DeleteOnTermination": "true"
+            }
+          }
+        ],
+        "IamInstanceProfile": {
+          "Ref": "WebserverInstanceProfile5CEA6CFC"
+        },
+        "ImageId": {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664ebsC96584B6F00A464EAD1953AFF4B05118Parameter"
+        },
+        "InstanceType": "t2.micro",
+        "KeyName": "ChrisGrey",
+        "SecurityGroupIds": [
+          {
+            "Fn::GetAtt": [
+              "WebserverInstanceSecurityGroupB57716DA",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-2ca6764a",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "TestInstance"
+          }
+        ],
+        "UserData": {
+          "Fn::Base64": "#!/bin/bash -xe\nsudo yum install httpd\nsudo chkconfig httpd on\nsudo service httpd start\n"
+        }
+      },
+      "DependsOn": [
+        "WebserverInstanceRole942CAF13"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "Custom-Ec2-Stack/Webserver/Resource"
+      }
+    }
+  },
+  "Parameters": {
+    "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664ebsC96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+      "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-ebs"
+    }
+  },
+  "Outputs": {
+    "WebserverPublicIp": {
+      "Description": "Webserver server IP address",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "Webserver2D6E5D9A",
+                "PublicIp"
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
