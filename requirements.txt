@@ -2,3 +2,5 @@
 aws-cdk.aws_ec2
 aws-cdk.aws_s3
 aws-cdk.aws_iam
+aws-cdk.aws_elasticloadbalancingv2
+aws-cdk.aws_autoscaling

@@ -136,7 +136,7 @@
           }
         ],
         "UserData": {
-          "Fn::Base64": "#!/bin/bash -xe\nsudo yum install httpd\nsudo chkconfig httpd on\nsudo service httpd start\n"
+          "Fn::Base64": "#!/bin/bash\nsudo yum install -y httpd\nsudo systemctl start httpd\nsudo systemctl enable httpd.service\n"
         }
       },
       "DependsOn": [

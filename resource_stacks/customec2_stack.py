@@ -28,7 +28,7 @@ class CustomEc2Stack(core.Stack):
                                 instance_type = _ec2.InstanceType(instance_type_identifier="t2.micro"),
                                 instance_name = 'TestInstance',
                                 # machine_image = _ec2.MachineImage.generic_linux(
-                                #     {'ap-southeast-2': "ami-0567f647e75c7bc05"}),
+                                #     {'ap-southeast-2': "ami-0aab712d6363da7f9"}),
                                 machine_image = Amazon_linux_ami,
                                 vpc = vpc,
                                 vpc_subnets = _ec2.SubnetSelection(

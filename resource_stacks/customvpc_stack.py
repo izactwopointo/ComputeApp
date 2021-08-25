@@ -10,7 +10,7 @@ class CustomVpcStack(core.Stack):
         vpc_configs = self.node.try_get_context('vpc_configs')
         # print(vpc_configs)
 
-        CutomVpc = _ec2.Vpc(self,
+        self.vpc = _ec2.Vpc(self,
              "customvpcId",
              cidr = vpc_configs['vpc_cidr'],
              max_azs = 2,
@@ -34,9 +34,9 @@ class CustomVpcStack(core.Stack):
              ]
             )
 
-        Tag =  core.Tags.of(CutomVpc).add('Owner', 'Esakkimuthu')
+        Tag =  core.Tags.of(self.vpc).add('Owner', 'Esakkimuthu')
 
         Output = core.CfnOutput(self,
             'CutomVpcId',
-            value = CutomVpc.vpc_id,
+            value = self.vpc.vpc_id,
             export_name = 'CutomVpc001')

@@ -1,4 +1,5 @@
-#!/bin/bash -xe
-sudo yum install httpd
-sudo chkconfig httpd on
-sudo service httpd start
+#!/bin/bash
+sudo yum install -y httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd.service
+echo "Hello Nigga from $(hostname -f)" > /var/www/html/index.html

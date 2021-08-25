@@ -7,122 +7,1018 @@
         "file": "tree.json"
       }
     },
-    "Custom-Ec2-Stack": {
+    "Custom-Vpc-Stack": {
       "type": "aws:cloudformation:stack",
-      "environment": "aws://275239396717/ap-southeast-2",
+      "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "Custom-Ec2-Stack.template.json",
+        "templateFile": "Custom-Vpc-Stack.template.json",
         "validateOnSynth": false
       },
       "metadata": {
-        "/Custom-Ec2-Stack/Webserver/InstanceSecurityGroup/Resource": [
+        "/Custom-Vpc-Stack/customvpcId/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "WebserverInstanceSecurityGroupB57716DA",
+            "data": "customvpcIdBA491B6F",
             "trace": [
-              "new SecurityGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:215:30)",
-              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:38:34)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:355:25)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Custom-Ec2-Stack/Webserver/InstanceRole/Resource": [
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/Subnet": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "WebserverInstanceRole942CAF13",
+            "data": "customvpcIdPublicSubnetSubnet1Subnet128217EA",
             "trace": [
-              "new Role (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
-              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:46:35)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PublicSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Custom-Ec2-Stack/Webserver/InstanceProfile": [
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/RouteTable": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "WebserverInstanceProfile5CEA6CFC",
+            "data": "customvpcIdPublicSubnetSubnet1RouteTable0E7B31DC",
             "trace": [
-              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:50:28)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PublicSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Custom-Ec2-Stack/Webserver/Resource": [
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/RouteTableAssociation": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "Webserver2D6E5D9A",
+            "data": "customvpcIdPublicSubnetSubnet1RouteTableAssociation8E28AED0",
             "trace": [
-              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:85:25)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PublicSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Custom-Ec2-Stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-ebs:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/DefaultRoute": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664ebsC96584B6F00A464EAD1953AFF4B05118Parameter",
+            "data": "customvpcIdPublicSubnetSubnet1DefaultRoute0EC5560B",
             "trace": [
-              "Function.fromStringParameterAttributes (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:134:15)",
-              "Function.valueForTypedStringParameter (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:208:21)",
-              "AmazonLinuxImage.getImage (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\machine-image.js:127:41)",
-              "new Instance (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-nN1Ca1\\node_modules\\@aws-cdk\\aws-ec2\\lib\\instance.js:54:48)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "PublicSubnet.addDefaultInternetRoute (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:735:23)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:388:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:387:32)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Custom-Ec2-Stack/WebserverPublicIp": [
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/EIP": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "WebserverPublicIp",
+            "data": "customvpcIdPublicSubnetSubnet1EIPFC11F1F7",
             "trace": [
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpcvycvatg\\lib\\program.js:9443:46)",
+              "PublicSubnet.addNatGateway (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:864:27)",
+              "NatGatewayProvider.configureNat (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:77:33)",
+              "Vpc.createNatGateways (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:535:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:393:22)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPublicSubnetSubnet1NATGateway9067AFD7",
+            "trace": [
+              "PublicSubnet.addNatGateway (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:862:21)",
+              "NatGatewayProvider.configureNat (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:77:33)",
+              "Vpc.createNatGateways (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:535:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:393:22)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPublicSubnetSubnet2SubnetB04ADD2F",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PublicSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPublicSubnetSubnet2RouteTable1C29A809",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PublicSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPublicSubnetSubnet2RouteTableAssociation358ACE5C",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PublicSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:844:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:577:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PublicSubnetSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPublicSubnetSubnet2DefaultRouteC9204EFE",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:735:23)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:388:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:387:32)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet1Subnet165185F8",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:582:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet1RouteTableB40E25D1",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:582:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet1RouteTableAssociation841B4E7C",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:582:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet1DefaultRoute0E3EA2BC",
+            "trace": [
+              "PrivateSubnet.addRoute (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:782:23)",
+              "NatGatewayProvider.configureSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:92:16)",
+              "NatGatewayProvider.configureNat (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:86:18)",
+              "Vpc.createNatGateways (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:535:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:393:22)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet2SubnetB77913AD",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:582:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet2RouteTableBB5F1BEC",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:582:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet2RouteTableAssociation64FB16DF",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:582:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/PrivateSubnetSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdPrivateSubnetSubnet2DefaultRoute150583CD",
+            "trace": [
+              "PrivateSubnet.addRoute (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:782:23)",
+              "NatGatewayProvider.configureSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:92:16)",
+              "NatGatewayProvider.configureNat (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\nat.js:86:18)",
+              "Vpc.createNatGateways (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:535:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:393:22)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdDBSubnetSubnet1SubnetBF4042A4",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdDBSubnetSubnet1RouteTable71C99E43",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/DBSubnetSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdDBSubnetSubnet1RouteTableAssociation79F86DC3",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdDBSubnetSubnet2Subnet757E70B0",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:679:24)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdDBSubnetSubnet2RouteTableAB75FA80",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:695:23)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/DBSubnetSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdDBSubnetSubnet2RouteTableAssociation6AF7FE67",
+            "trace": [
+              "new Subnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:700:9)",
+              "new PrivateSubnet (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:884:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:587:44",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:561:32)",
+              "Vpc.createSubnets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:552:18)",
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:376:14)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdIGW463B5CE1",
+            "trace": [
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:380:25)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/customvpcId/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customvpcIdVPCGWD055D3E5",
+            "trace": [
+              "new Vpc (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\vpc.js:383:25)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/CutomVpcId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CutomVpcId",
+            "trace": [
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/Exports/Output{\"Ref\":\"customvpcIdPublicSubnetSubnet1Subnet128217EA\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefcustomvpcIdPublicSubnetSubnet1Subnet128217EAC4018983",
+            "trace": [
+              "Stack.exportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stack.js:615:13)",
+              "createImportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:138:39)",
+              "resolveValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:84:12)",
+              "Object.resolveReferences (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:25:30)",
+              "Object.prepareApp (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\prepare-app.js:30:12)",
+              "Object.synthesize (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:21:19)",
+              "App.synth (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/Exports/Output{\"Ref\":\"customvpcIdPublicSubnetSubnet2SubnetB04ADD2F\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefcustomvpcIdPublicSubnetSubnet2SubnetB04ADD2FC10EF787",
+            "trace": [
+              "Stack.exportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stack.js:615:13)",
+              "createImportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:138:39)",
+              "resolveValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:84:12)",
+              "Object.resolveReferences (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:25:30)",
+              "Object.prepareApp (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\prepare-app.js:30:12)",
+              "Object.synthesize (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:21:19)",
+              "App.synth (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/Exports/Output{\"Ref\":\"customvpcIdBA491B6F\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefcustomvpcIdBA491B6F7D043712",
+            "trace": [
+              "Stack.exportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stack.js:615:13)",
+              "createImportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:138:39)",
+              "resolveValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:84:12)",
+              "Object.resolveReferences (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:25:30)",
+              "Object.prepareApp (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\prepare-app.js:30:12)",
+              "Object.synthesize (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:21:19)",
+              "App.synth (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/Exports/Output{\"Ref\":\"customvpcIdPrivateSubnetSubnet1Subnet165185F8\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefcustomvpcIdPrivateSubnetSubnet1Subnet165185F81C272F4C",
+            "trace": [
+              "Stack.exportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stack.js:615:13)",
+              "createImportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:138:39)",
+              "resolveValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:84:12)",
+              "Object.resolveReferences (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:25:30)",
+              "Object.prepareApp (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\prepare-app.js:30:12)",
+              "Object.synthesize (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:21:19)",
+              "App.synth (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-Vpc-Stack/Exports/Output{\"Ref\":\"customvpcIdPrivateSubnetSubnet2SubnetB77913AD\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefcustomvpcIdPrivateSubnetSubnet2SubnetB77913AD9565F981",
+            "trace": [
+              "Stack.exportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stack.js:615:13)",
+              "createImportValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:138:39)",
+              "resolveValue (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:84:12)",
+              "Object.resolveReferences (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\refs.js:25:30)",
+              "Object.prepareApp (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\prepare-app.js:30:12)",
+              "Object.synthesize (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:21:19)",
+              "App.synth (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ]
       },
-      "displayName": "Custom-Ec2-Stack"
+      "displayName": "Custom-Vpc-Stack"
+    },
+    "Custom-ALB-Stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Custom-ALB-Stack.template.json",
+        "validateOnSynth": false
+      },
+      "dependencies": [
+        "Custom-Vpc-Stack"
+      ],
+      "metadata": {
+        "/Custom-ALB-Stack/TestAlb/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestAlb8F0A2B31",
+            "trace": [
+              "new BaseLoadBalancer (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-load-balancer.js:35:26)",
+              "new ApplicationLoadBalancer (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:28:9)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/TestAlb/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestAlbSecurityGroupA9ADEAB8",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:215:30)",
+              "new ApplicationLoadBalancer (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:34:56)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/TestAlb/SecurityGroup/to CustomALBStackWebserverAsgIdInstanceSecurityGroupEAB8765A:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestAlbSecurityGrouptoCustomALBStackWebserverAsgIdInstanceSecurityGroupEAB8765A80F5A05281",
+            "trace": [
+              "SecurityGroup.addEgressRule (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:72:13)",
+              "SecurityGroup.addEgressRule (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:347:19)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:81:31",
+              "ReactiveList.forEachAndForever (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:226:13)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:80:51",
+              "ReactiveList.forEachAndForever (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:226:13)",
+              "Connections.allowTo (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:79:30)",
+              "Connections.allowFrom (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:112:31)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/TestAlb/listenerId/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestAlblistenerId2D50598C",
+            "trace": [
+              "new BaseListener (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-listener.js:21:26)",
+              "new ApplicationListener (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:32:9)",
+              "ApplicationLoadBalancer.addListener (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:74:26)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/TestAlb/listenerId/listenerIdGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestAlblistenerIdlistenerIdGroupA0CC5EEE",
+            "trace": [
+              "new TargetGroupBase (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-target-group.js:44:25)",
+              "new ApplicationTargetGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:26:9)",
+              "ApplicationListener.addTargets (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:228:23)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/WebServerRoleId/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebServerRoleId88CEF83E",
+            "trace": [
+              "new Role (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/WebserverAsgId/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverAsgIdInstanceSecurityGroup7487959B",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:215:30)",
+              "new AutoScalingGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-autoscaling\\lib\\auto-scaling-group.js:413:53)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/WebserverAsgId/InstanceSecurityGroup/from CustomALBStackTestAlbSecurityGroup95BFCDC2:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverAsgIdInstanceSecurityGroupfromCustomALBStackTestAlbSecurityGroup95BFCDC2801E1E6BCE",
+            "trace": [
+              "SecurityGroup.addIngressRule (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:57:13)",
+              "SecurityGroup.addIngressRule (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:307:19)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:106:31",
+              "ReactiveList.forEachAndForever (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:226:13)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:105:51",
+              "ReactiveList.forEachAndForever (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:226:13)",
+              "Connections.allowFrom (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:104:30)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/WebserverAsgId/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverAsgIdInstanceRoleB2EA470D",
+            "trace": [
+              "new Role (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "new AutoScalingGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-autoscaling\\lib\\auto-scaling-group.js:420:35)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/WebserverAsgId/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverAsgIdInstanceProfileEAD4DCD0",
+            "trace": [
+              "new AutoScalingGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-autoscaling\\lib\\auto-scaling-group.js:428:28)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/WebserverAsgId/LaunchConfig": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverAsgIdLaunchConfig118B683B",
+            "trace": [
+              "new AutoScalingGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-autoscaling\\lib\\auto-scaling-group.js:436:30)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/WebserverAsgId/ASG": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WebserverAsgIdASGAED2B3F6",
+            "trace": [
+              "new AutoScalingGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-autoscaling\\lib\\auto-scaling-group.js:521:33)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:134:15)",
+              "Function.valueForTypedStringParameter (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ssm\\lib\\parameter.js:208:21)",
+              "AmazonLinuxImage.getImage (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-ec2\\lib\\machine-image.js:127:41)",
+              "new AutoScalingGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-MImKGl\\node_modules\\@aws-cdk\\aws-autoscaling\\lib\\auto-scaling-group.js:432:48)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ],
+        "/Custom-ALB-Stack/ALBDomainName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ALBDomainName",
+            "trace": [
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmpy65dyxlh\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:464:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "Custom-ALB-Stack"
     }
   }
 }

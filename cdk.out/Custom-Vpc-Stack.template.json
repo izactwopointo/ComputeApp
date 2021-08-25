@@ -619,6 +619,46 @@
       "Export": {
         "Name": "CutomVpc001"
       }
+    },
+    "ExportsOutputRefcustomvpcIdPublicSubnetSubnet1Subnet128217EAC4018983": {
+      "Value": {
+        "Ref": "customvpcIdPublicSubnetSubnet1Subnet128217EA"
+      },
+      "Export": {
+        "Name": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPublicSubnetSubnet1Subnet128217EAC4018983"
+      }
+    },
+    "ExportsOutputRefcustomvpcIdPublicSubnetSubnet2SubnetB04ADD2FC10EF787": {
+      "Value": {
+        "Ref": "customvpcIdPublicSubnetSubnet2SubnetB04ADD2F"
+      },
+      "Export": {
+        "Name": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPublicSubnetSubnet2SubnetB04ADD2FC10EF787"
+      }
+    },
+    "ExportsOutputRefcustomvpcIdBA491B6F7D043712": {
+      "Value": {
+        "Ref": "customvpcIdBA491B6F"
+      },
+      "Export": {
+        "Name": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdBA491B6F7D043712"
+      }
+    },
+    "ExportsOutputRefcustomvpcIdPrivateSubnetSubnet1Subnet165185F81C272F4C": {
+      "Value": {
+        "Ref": "customvpcIdPrivateSubnetSubnet1Subnet165185F8"
+      },
+      "Export": {
+        "Name": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPrivateSubnetSubnet1Subnet165185F81C272F4C"
+      }
+    },
+    "ExportsOutputRefcustomvpcIdPrivateSubnetSubnet2SubnetB77913AD9565F981": {
+      "Value": {
+        "Ref": "customvpcIdPrivateSubnetSubnet2SubnetB77913AD"
+      },
+      "Export": {
+        "Name": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPrivateSubnetSubnet2SubnetB77913AD9565F981"
+      }
     }
   }
 }
