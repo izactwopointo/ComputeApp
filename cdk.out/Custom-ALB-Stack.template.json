@@ -1,0 +1,338 @@
+{
+  "Resources": {
+    "TestAlb8F0A2B31": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "LoadBalancerAttributes": [
+          {
+            "Key": "deletion_protection.enabled",
+            "Value": "false"
+          }
+        ],
+        "Name": "WebServerAlb",
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "TestAlbSecurityGroupA9ADEAB8",
+              "GroupId"
+            ]
+          }
+        ],
+        "Subnets": [
+          {
+            "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPublicSubnetSubnet1Subnet128217EAC4018983"
+          },
+          {
+            "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPublicSubnetSubnet2SubnetB04ADD2FC10EF787"
+          }
+        ],
+        "Type": "application"
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/TestAlb/Resource"
+      }
+    },
+    "TestAlbSecurityGroupA9ADEAB8": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatically created Security Group for ELB CustomALBStackTestAlb3EB48EA4",
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow Internet Access on port 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "VpcId": {
+          "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdBA491B6F7D043712"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/TestAlb/SecurityGroup/Resource"
+      }
+    },
+    "TestAlbSecurityGrouptoCustomALBStackWebserverAsgIdInstanceSecurityGroupEAB8765A80F5A05281": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Fn::GetAtt": [
+            "TestAlbSecurityGroupA9ADEAB8",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "Description": "Allow ASG Security Group receive traffic from ALB",
+        "DestinationSecurityGroupId": {
+          "Fn::GetAtt": [
+            "WebserverAsgIdInstanceSecurityGroup7487959B",
+            "GroupId"
+          ]
+        },
+        "FromPort": 80,
+        "ToPort": 80
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/TestAlb/SecurityGroup/to CustomALBStackWebserverAsgIdInstanceSecurityGroupEAB8765A:80"
+      }
+    },
+    "TestAlblistenerId2D50598C": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "TestAlblistenerIdlistenerIdGroupA0CC5EEE"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "TestAlb8F0A2B31"
+        },
+        "Port": 80,
+        "Protocol": "HTTP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/TestAlb/listenerId/Resource"
+      }
+    },
+    "TestAlblistenerIdlistenerIdGroupA0CC5EEE": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Port": 80,
+        "Protocol": "HTTP",
+        "TargetType": "instance",
+        "VpcId": {
+          "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdBA491B6F7D043712"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/TestAlb/listenerId/listenerIdGroup/Resource"
+      }
+    },
+    "webServerRoleId125658B3": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "ec2.",
+                      {
+                        "Ref": "AWS::URLSuffix"
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+              ]
+            ]
+          },
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AmazonS3ReadOnlyAccess"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/webServerRoleId/Resource"
+      }
+    },
+    "WebserverAsgIdInstanceSecurityGroup7487959B": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Custom-ALB-Stack/WebserverAsgId/InstanceSecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Custom-ALB-Stack/WebserverAsgId"
+          }
+        ],
+        "VpcId": {
+          "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdBA491B6F7D043712"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/WebserverAsgId/InstanceSecurityGroup/Resource"
+      }
+    },
+    "WebserverAsgIdInstanceSecurityGroupfromCustomALBStackTestAlbSecurityGroup95BFCDC2801E1E6BCE": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "Allow ASG Security Group receive traffic from ALB",
+        "FromPort": 80,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "WebserverAsgIdInstanceSecurityGroup7487959B",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "TestAlbSecurityGroupA9ADEAB8",
+            "GroupId"
+          ]
+        },
+        "ToPort": 80
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/WebserverAsgId/InstanceSecurityGroup/from CustomALBStackTestAlbSecurityGroup95BFCDC2:80"
+      }
+    },
+    "WebserverAsgIdInstanceProfileEAD4DCD0": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "Roles": [
+          {
+            "Ref": "webServerRoleId125658B3"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/WebserverAsgId/InstanceProfile"
+      }
+    },
+    "WebserverAsgIdLaunchConfig118B683B": {
+      "Type": "AWS::AutoScaling::LaunchConfiguration",
+      "Properties": {
+        "ImageId": {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+        },
+        "InstanceType": "t2.micro",
+        "IamInstanceProfile": {
+          "Ref": "WebserverAsgIdInstanceProfileEAD4DCD0"
+        },
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "WebserverAsgIdInstanceSecurityGroup7487959B",
+              "GroupId"
+            ]
+          }
+        ],
+        "UserData": {
+          "Fn::Base64": "#!/bin/bash -xe\n\n# version: 31Aug\n\n#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php mysql\nsudo chkconfig httpd on\nsudo service httpd start\necho \"Hello Nigga from $(hostname -f)\" > /var/www/html/index.html\nsudo yum install -y mysql57 curl\n\n# Ping github\ncurl \"https://github.com/miztiik\"\n\n# To Connect to DB\n# mysql -u {User_name} -p -h {RDS_End_Point} {DB_NAME}\n"
+        }
+      },
+      "DependsOn": [
+        "webServerRoleId125658B3"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/WebserverAsgId/LaunchConfig"
+      }
+    },
+    "WebserverAsgIdASGAED2B3F6": {
+      "Type": "AWS::AutoScaling::AutoScalingGroup",
+      "Properties": {
+        "MaxSize": "2",
+        "MinSize": "2",
+        "LaunchConfigurationName": {
+          "Ref": "WebserverAsgIdLaunchConfig118B683B"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "PropagateAtLaunch": true,
+            "Value": "Custom-ALB-Stack/WebserverAsgId"
+          }
+        ],
+        "TargetGroupARNs": [
+          {
+            "Ref": "TestAlblistenerIdlistenerIdGroupA0CC5EEE"
+          }
+        ],
+        "VPCZoneIdentifier": [
+          {
+            "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPrivateSubnetSubnet1Subnet165185F81C272F4C"
+          },
+          {
+            "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPrivateSubnetSubnet2SubnetB77913AD9565F981"
+          }
+        ]
+      },
+      "UpdatePolicy": {
+        "AutoScalingScheduledAction": {
+          "IgnoreUnmodifiedGroupSizeProperties": true
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-ALB-Stack/WebserverAsgId/ASG"
+      }
+    }
+  },
+  "Parameters": {
+    "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+      "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
+    }
+  },
+  "Outputs": {
+    "ALBDomainName": {
+      "Description": "Web Server ALB Domain Name",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "TestAlb8F0A2B31",
+                "DNSName"
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "ExportsOutputFnGetAttWebserverAsgIdInstanceSecurityGroup7487959BGroupIdD441E549": {
+      "Value": {
+        "Fn::GetAtt": [
+          "WebserverAsgIdInstanceSecurityGroup7487959B",
+          "GroupId"
+        ]
+      },
+      "Export": {
+        "Name": "Custom-ALB-Stack:ExportsOutputFnGetAttWebserverAsgIdInstanceSecurityGroup7487959BGroupIdD441E549"
+      }
+    }
+  }
+}

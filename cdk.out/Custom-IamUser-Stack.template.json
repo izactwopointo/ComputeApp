@@ -1,0 +1,38 @@
+{
+  "Resources": {
+    "User1Pass369E8BFE": {
+      "Type": "AWS::SecretsManager::Secret",
+      "Properties": {
+        "Description": "Initial Password for User1",
+        "GenerateSecretString": {},
+        "Name": "user1_pass"
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-IamUser-Stack/User1Pass/Resource"
+      }
+    },
+    "User1E278A736": {
+      "Type": "AWS::IAM::User",
+      "Properties": {
+        "LoginProfile": {
+          "Password": {
+            "Fn::Join": [
+              "",
+              [
+                "{{resolve:secretsmanager:",
+                {
+                  "Ref": "User1Pass369E8BFE"
+                },
+                ":SecretString:::}}"
+              ]
+            ]
+          }
+        },
+        "UserName": "Avinash"
+      },
+      "Metadata": {
+        "aws:cdk:path": "Custom-IamUser-Stack/User1/Resource"
+      }
+    }
+  }
+}

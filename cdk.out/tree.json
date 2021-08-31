@@ -1119,13 +1119,13 @@
               "version": "1.117.0"
             }
           },
-          "WebServerRoleId": {
-            "id": "WebServerRoleId",
-            "path": "Custom-ALB-Stack/WebServerRoleId",
+          "webServerRoleId": {
+            "id": "webServerRoleId",
+            "path": "Custom-ALB-Stack/webServerRoleId",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "Custom-ALB-Stack/WebServerRoleId/Resource",
+                "path": "Custom-ALB-Stack/webServerRoleId/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                   "aws:cdk:cloudformation:props": {
@@ -1263,57 +1263,6 @@
                   "version": "1.117.0"
                 }
               },
-              "InstanceRole": {
-                "id": "InstanceRole",
-                "path": "Custom-ALB-Stack/WebserverAsgId/InstanceRole",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "Custom-ALB-Stack/WebserverAsgId/InstanceRole/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                      "aws:cdk:cloudformation:props": {
-                        "assumeRolePolicyDocument": {
-                          "Statement": [
-                            {
-                              "Action": "sts:AssumeRole",
-                              "Effect": "Allow",
-                              "Principal": {
-                                "Service": {
-                                  "Fn::Join": [
-                                    "",
-                                    [
-                                      "ec2.",
-                                      {
-                                        "Ref": "AWS::URLSuffix"
-                                      }
-                                    ]
-                                  ]
-                                }
-                              }
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "tags": [
-                          {
-                            "key": "Name",
-                            "value": "Custom-ALB-Stack/WebserverAsgId"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "@aws-cdk/aws-iam.CfnRole",
-                      "version": "1.117.0"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "@aws-cdk/aws-iam.Role",
-                  "version": "1.117.0"
-                }
-              },
               "InstanceProfile": {
                 "id": "InstanceProfile",
                 "path": "Custom-ALB-Stack/WebserverAsgId/InstanceProfile",
@@ -1322,7 +1271,7 @@
                   "aws:cdk:cloudformation:props": {
                     "roles": [
                       {
-                        "Ref": "WebserverAsgIdInstanceRoleB2EA470D"
+                        "Ref": "webServerRoleId125658B3"
                       }
                     ]
                   }
@@ -1354,7 +1303,7 @@
                       }
                     ],
                     "userData": {
-                      "Fn::Base64": "#!/bin/bash\nsudo yum install -y httpd\nsudo systemctl start httpd\nsudo systemctl enable httpd.service\necho \"Hello Nigga from $(hostname -f)\" > /var/www/html/index.html\n"
+                      "Fn::Base64": "#!/bin/bash -xe\n\n# version: 31Aug\n\n#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php mysql\nsudo chkconfig httpd on\nsudo service httpd start\necho \"Hello Nigga from $(hostname -f)\" > /var/www/html/index.html\nsudo yum install -y mysql57 curl\n\n# Ping github\ncurl \"https://github.com/miztiik\"\n\n# To Connect to DB\n# mysql -u {User_name} -p -h {RDS_End_Point} {DB_NAME}\n"
                     }
                   }
                 },
@@ -1426,6 +1375,288 @@
           "ALBDomainName": {
             "id": "ALBDomainName",
             "path": "Custom-ALB-Stack/ALBDomainName",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.117.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "Custom-ALB-Stack/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"WebserverAsgIdInstanceSecurityGroup7487959B\",\"GroupId\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"WebserverAsgIdInstanceSecurityGroup7487959B\",\"GroupId\"]}",
+                "path": "Custom-ALB-Stack/Exports/Output{\"Fn::GetAtt\":[\"WebserverAsgIdInstanceSecurityGroup7487959B\",\"GroupId\"]}",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.117.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.117.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.117.0"
+        }
+      },
+      "RDS-Database-Stack": {
+        "id": "RDS-Database-Stack",
+        "path": "RDS-Database-Stack",
+        "children": {
+          "testRdsDb": {
+            "id": "testRdsDb",
+            "path": "RDS-Database-Stack/testRdsDb",
+            "children": {
+              "SubnetGroup": {
+                "id": "SubnetGroup",
+                "path": "RDS-Database-Stack/testRdsDb/SubnetGroup",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "RDS-Database-Stack/testRdsDb/SubnetGroup/Default",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::RDS::DBSubnetGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "dbSubnetGroupDescription": "Subnet group for testRdsDb database",
+                        "subnetIds": [
+                          {
+                            "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPrivateSubnetSubnet1Subnet165185F81C272F4C"
+                          },
+                          {
+                            "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdPrivateSubnetSubnet2SubnetB77913AD9565F981"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-rds.CfnDBSubnetGroup",
+                      "version": "1.117.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-rds.SubnetGroup",
+                  "version": "1.117.0"
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "RDS-Database-Stack/testRdsDb/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "RDS-Database-Stack/testRdsDb/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Security group for testRdsDb database",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "Custom-Vpc-Stack:ExportsOutputRefcustomvpcIdBA491B6F7D043712"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroup",
+                      "version": "1.117.0"
+                    }
+                  },
+                  "from CustomALBStackWebserverAsgIdInstanceSecurityGroupEAB8765A:{IndirectPort}": {
+                    "id": "from CustomALBStackWebserverAsgIdInstanceSecurityGroupEAB8765A:{IndirectPort}",
+                    "path": "RDS-Database-Stack/testRdsDb/SecurityGroup/from CustomALBStackWebserverAsgIdInstanceSecurityGroupEAB8765A:{IndirectPort}",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                      "aws:cdk:cloudformation:props": {
+                        "ipProtocol": "tcp",
+                        "description": "Allow EC2 ASG Access to RDS Mysql",
+                        "fromPort": {
+                          "Fn::GetAtt": [
+                            "testRdsDb150C0DC9",
+                            "Endpoint.Port"
+                          ]
+                        },
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "testRdsDbSecurityGroup12D6EEB2",
+                            "GroupId"
+                          ]
+                        },
+                        "sourceSecurityGroupId": {
+                          "Fn::ImportValue": "Custom-ALB-Stack:ExportsOutputFnGetAttWebserverAsgIdInstanceSecurityGroup7487959BGroupIdD441E549"
+                        },
+                        "toPort": {
+                          "Fn::GetAtt": [
+                            "testRdsDb150C0DC9",
+                            "Endpoint.Port"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-ec2.CfnSecurityGroupIngress",
+                      "version": "1.117.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-ec2.SecurityGroup",
+                  "version": "1.117.0"
+                }
+              },
+              "Secret": {
+                "id": "Secret",
+                "path": "RDS-Database-Stack/testRdsDb/Secret",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "RDS-Database-Stack/testRdsDb/Secret/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
+                      "aws:cdk:cloudformation:props": {
+                        "description": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "Generated by the CDK for stack: ",
+                              {
+                                "Ref": "AWS::StackName"
+                              }
+                            ]
+                          ]
+                        },
+                        "generateSecretString": {
+                          "passwordLength": 30,
+                          "secretStringTemplate": "{\"username\":\"admin\"}",
+                          "generateStringKey": "password",
+                          "excludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-secretsmanager.CfnSecret",
+                      "version": "1.117.0"
+                    }
+                  },
+                  "Attachment": {
+                    "id": "Attachment",
+                    "path": "RDS-Database-Stack/testRdsDb/Secret/Attachment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "RDS-Database-Stack/testRdsDb/Secret/Attachment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::SecretsManager::SecretTargetAttachment",
+                          "aws:cdk:cloudformation:props": {
+                            "secretId": {
+                              "Ref": "testRdsDbSecret760AC201"
+                            },
+                            "targetId": {
+                              "Ref": "testRdsDb150C0DC9"
+                            },
+                            "targetType": "AWS::RDS::DBInstance"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-secretsmanager.CfnSecretTargetAttachment",
+                          "version": "1.117.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-secretsmanager.SecretTargetAttachment",
+                      "version": "1.117.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-rds.DatabaseSecret",
+                  "version": "1.117.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "RDS-Database-Stack/testRdsDb/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::RDS::DBInstance",
+                  "aws:cdk:cloudformation:props": {
+                    "dbInstanceClass": "db.t2.micro",
+                    "allocatedStorage": "30",
+                    "backupRetentionPeriod": 7,
+                    "copyTagsToSnapshot": true,
+                    "dbName": "test_db",
+                    "dbSubnetGroupName": {
+                      "Ref": "testRdsDbSubnetGroup08EB9E5E"
+                    },
+                    "deleteAutomatedBackups": true,
+                    "deletionProtection": false,
+                    "enableCloudwatchLogsExports": [
+                      "audit",
+                      "error",
+                      "slowquery"
+                    ],
+                    "engine": "mysql",
+                    "masterUsername": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "testRdsDbSecret760AC201"
+                          },
+                          ":SecretString:username::}}"
+                        ]
+                      ]
+                    },
+                    "masterUserPassword": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "testRdsDbSecret760AC201"
+                          },
+                          ":SecretString:password::}}"
+                        ]
+                      ]
+                    },
+                    "multiAz": false,
+                    "port": "3306",
+                    "storageType": "gp2",
+                    "vpcSecurityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "testRdsDbSecurityGroup12D6EEB2",
+                          "GroupId"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-rds.CfnDBInstance",
+                  "version": "1.117.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-rds.DatabaseInstance",
+              "version": "1.117.0"
+            }
+          },
+          "DatabaseConnectionCommand": {
+            "id": "DatabaseConnectionCommand",
+            "path": "RDS-Database-Stack/DatabaseConnectionCommand",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
               "version": "1.117.0"
