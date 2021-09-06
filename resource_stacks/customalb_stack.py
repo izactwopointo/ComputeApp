@@ -12,8 +12,11 @@ class ALB_ASGStack(core.Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         #Reading User Data
-        with open("bootstrap_scripts/db.sh", mode = "r") as file:
-            user_data = file.read()
+        try:
+            with open("bootstrap_scripts/db.sh", mode = "r") as file:
+                user_data = file.read()
+        except OSError:
+            print("Unable to find the given file.")
 
         #Selecting Latest AMI ID
         linux_ami = _ec2.MachineImage.latest_amazon_linux(

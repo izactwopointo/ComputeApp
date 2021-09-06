@@ -7,3 +7,7 @@ aws-cdk.aws_autoscaling
 aws-cdk.aws_ssm
 aws-cdk.aws_secretsmanager
 aws-cdk.aws_rds
+aws-cdk.aws_lambda
+aws-cdk.aws_logs
+aws-cdk.aws_events
+aws-cdk.aws_events_targets

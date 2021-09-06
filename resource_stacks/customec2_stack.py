@@ -12,9 +12,11 @@ class CustomEc2Stack(core.Stack):
         vpc = _ec2.Vpc.from_lookup(self,
                                     "importedVpc",
                                     is_default = True)
-
-        with open("bootstrap_scripts/httpd.sh", mode = "r") as file:
-            user_data = file.read()
+        try:
+            with open("bootstrap_scripts/httpd.sh", mode = "r") as file:
+                user_data = file.read()
+        except OSError:
+            print("Unable to find the given file.")
 
         Amazon_linux_ami = _ec2.MachineImage.latest_amazon_linux(
                 generation = _ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
