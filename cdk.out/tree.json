@@ -12,39 +12,69 @@
           "version": "1.117.0"
         }
       },
-      "Test-Lambda-Stack": {
-        "id": "Test-Lambda-Stack",
-        "path": "Test-Lambda-Stack",
+      "List-S3-Buckets-Into-Dynamodb": {
+        "id": "List-S3-Buckets-Into-Dynamodb",
+        "path": "List-S3-Buckets-Into-Dynamodb",
         "children": {
-          "AssetBucket": {
-            "id": "AssetBucket",
-            "path": "Test-Lambda-Stack/AssetBucket",
+          "S3AssetTable": {
+            "id": "S3AssetTable",
+            "path": "List-S3-Buckets-Into-Dynamodb/S3AssetTable",
             "children": {
-              "Notifications": {
-                "id": "Notifications",
-                "path": "Test-Lambda-Stack/AssetBucket/Notifications",
+              "Resource": {
+                "id": "Resource",
+                "path": "List-S3-Buckets-Into-Dynamodb/S3AssetTable/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                  "aws:cdk:cloudformation:props": {
+                    "keySchema": [
+                      {
+                        "attributeName": "_id",
+                        "keyType": "HASH"
+                      }
+                    ],
+                    "attributeDefinitions": [
+                      {
+                        "attributeName": "_id",
+                        "attributeType": "S"
+                      }
+                    ],
+                    "provisionedThroughput": {
+                      "readCapacityUnits": 5,
+                      "writeCapacityUnits": 5
+                    },
+                    "tableName": "S3AssetTable"
+                  }
+                },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/core.Construct",
+                  "fqn": "@aws-cdk/aws-dynamodb.CfnTable",
+                  "version": "1.117.0"
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "List-S3-Buckets-Into-Dynamodb/S3AssetTable/ScalingRole",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Resource",
                   "version": "1.117.0"
                 }
               }
             },
             "constructInfo": {
-              "fqn": "@aws-cdk/aws-s3.BucketBase",
+              "fqn": "@aws-cdk/aws-dynamodb.Table",
               "version": "1.117.0"
             }
           },
-          "Test Function": {
-            "id": "Test Function",
-            "path": "Test-Lambda-Stack/Test Function",
+          "List-S3-Dynamodb-Function": {
+            "id": "List-S3-Dynamodb-Function",
+            "path": "List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "Test-Lambda-Stack/Test Function/ServiceRole",
+                "path": "List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "Test-Lambda-Stack/Test Function/ServiceRole/Resource",
+                    "path": "List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -72,12 +102,78 @@
                                 ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
                               ]
                             ]
+                          },
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/AmazonS3ReadOnlyAccess"
+                              ]
+                            ]
                           }
                         ]
                       }
                     },
                     "constructInfo": {
                       "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.117.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "S3AssetTable4207B402",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "ListS3DynamodbFunctionServiceRoleDefaultPolicy949414EF",
+                            "roles": [
+                              {
+                                "Ref": "ListS3DynamodbFunctionServiceRole87D3DA44"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-iam.CfnPolicy",
+                          "version": "1.117.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.Policy",
                       "version": "1.117.0"
                     }
                   }
@@ -89,28 +185,27 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "Test-Lambda-Stack/Test Function/Resource",
+                "path": "List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
-                      "s3Bucket": "test-assets-bkt",
-                      "s3Key": "lambda_source/process.zip"
+                      "zipFile": "# -*- coding: utf-8 -*-\n\nimport boto3\nimport json\nimport logging\nimport os\n\n_s3_client = boto3.client('s3')\n_ddb = boto3.resource('dynamodb')\n\n\ndef _ddb_put_item(item):\n    \"\"\" Insert Item into DynamoDb Table \"\"\"\n    if os.environ.get('DDB_TABLE_NAME'):\n        _ddb_table = _ddb.Table(os.environ.get('DDB_TABLE_NAME'))\n        try:\n            _ddb_table.put_item(Item=item)\n        except Exception as e:\n            raise\n\n\ndef get_bkts_inventory():\n    \"\"\" Generate List of S3 Buckets \"\"\"\n    try:\n        resp = _s3_client.list_buckets()\n        bkt_inventory = {\"buckets\": []}\n        for bkt in resp['Buckets']:\n            bkt_inventory[\"buckets\"].append(bkt[\"Name\"])\n            _ddb_put_item({\"_id\": bkt[\"Name\"]})\n        return bkt_inventory\n    except Exception as e:\n        raise\n\n\ndef lambda_handler(event, context):\n    global LOGGER\n    LOGGER = logging.getLogger()\n    LOGGER.setLevel(level=os.getenv('LOG_LEVEL', 'DEBUG').upper())\n    LOGGER.info(f\"received_event:{event}\")\n\n    resp = {\n        \"statusCode\": 400,\n        \"body\": json.dumps({\"message\": event})\n    }\n\n    try:\n        bkt_inventory = get_bkts_inventory()\n        resp[\"body\"] = json.dumps({\n            \"message\": bkt_inventory\n        })\n        resp['statusCode'] = 200\n    except Exception as e:\n        resp[\"body\"] = json.dumps({\n            \"message\": f\"ERROR:{str(e)}\"\n        })\n\n    return resp\n"
                     },
                     "role": {
                       "Fn::GetAtt": [
-                        "TestFunctionServiceRole8D1C12F8",
+                        "ListS3DynamodbFunctionServiceRole87D3DA44",
                         "Arn"
                       ]
                     },
-                    "description": "This is test function",
+                    "description": "This function will list all the S3 buckets into the DynamoDb",
                     "environment": {
                       "variables": {
                         "LOG_LEVEL": "INFO"
                       }
                     },
-                    "functionName": "Test_Function",
-                    "handler": "process.lambda_handler",
+                    "functionName": "FucntionToListS3Buckets",
+                    "handler": "index.lambda_handler",
                     "reservedConcurrentExecutions": 1,
                     "runtime": "python3.7",
                     "timeout": 3
@@ -127,24 +222,24 @@
               "version": "1.117.0"
             }
           },
-          "SixPmRule": {
-            "id": "SixPmRule",
-            "path": "Test-Lambda-Stack/SixPmRule",
+          "RunEveryWeek": {
+            "id": "RunEveryWeek",
+            "path": "List-S3-Buckets-Into-Dynamodb/RunEveryWeek",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "Test-Lambda-Stack/SixPmRule/Resource",
+                "path": "List-S3-Buckets-Into-Dynamodb/RunEveryWeek/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Events::Rule",
                   "aws:cdk:cloudformation:props": {
-                    "scheduleExpression": "cron(0 18 ? * MON-FRI *)",
+                    "scheduleExpression": "cron(0 18 ? * MON *)",
                     "state": "ENABLED",
                     "targets": [
                       {
                         "id": "Target0",
                         "arn": {
                           "Fn::GetAtt": [
-                            "TestFunctionF2BAB7D5",
+                            "ListS3DynamodbFunction2E68382F",
                             "Arn"
                           ]
                         }
@@ -157,23 +252,23 @@
                   "version": "1.117.0"
                 }
               },
-              "AllowEventRuleTestLambdaStackTestFunction8B2B764A": {
-                "id": "AllowEventRuleTestLambdaStackTestFunction8B2B764A",
-                "path": "Test-Lambda-Stack/SixPmRule/AllowEventRuleTestLambdaStackTestFunction8B2B764A",
+              "AllowEventRuleListS3BucketsIntoDynamodbListS3DynamodbFunctionCFB2F046": {
+                "id": "AllowEventRuleListS3BucketsIntoDynamodbListS3DynamodbFunctionCFB2F046",
+                "path": "List-S3-Buckets-Into-Dynamodb/RunEveryWeek/AllowEventRuleListS3BucketsIntoDynamodbListS3DynamodbFunctionCFB2F046",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                   "aws:cdk:cloudformation:props": {
                     "action": "lambda:InvokeFunction",
                     "functionName": {
                       "Fn::GetAtt": [
-                        "TestFunctionF2BAB7D5",
+                        "ListS3DynamodbFunction2E68382F",
                         "Arn"
                       ]
                     },
                     "principal": "events.amazonaws.com",
                     "sourceArn": {
                       "Fn::GetAtt": [
-                        "SixPmRuleA9CDDF5C",
+                        "RunEveryWeek22A7B598",
                         "Arn"
                       ]
                     }
@@ -187,104 +282,6 @@
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-events.Rule",
-              "version": "1.117.0"
-            }
-          },
-          "RunEvery1Minute": {
-            "id": "RunEvery1Minute",
-            "path": "Test-Lambda-Stack/RunEvery1Minute",
-            "children": {
-              "Resource": {
-                "id": "Resource",
-                "path": "Test-Lambda-Stack/RunEvery1Minute/Resource",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::Events::Rule",
-                  "aws:cdk:cloudformation:props": {
-                    "scheduleExpression": "rate(1 minute)",
-                    "state": "ENABLED",
-                    "targets": [
-                      {
-                        "id": "Target0",
-                        "arn": {
-                          "Fn::GetAtt": [
-                            "TestFunctionF2BAB7D5",
-                            "Arn"
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "@aws-cdk/aws-events.CfnRule",
-                  "version": "1.117.0"
-                }
-              },
-              "AllowEventRuleTestLambdaStackTestFunction8B2B764A": {
-                "id": "AllowEventRuleTestLambdaStackTestFunction8B2B764A",
-                "path": "Test-Lambda-Stack/RunEvery1Minute/AllowEventRuleTestLambdaStackTestFunction8B2B764A",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
-                  "aws:cdk:cloudformation:props": {
-                    "action": "lambda:InvokeFunction",
-                    "functionName": {
-                      "Fn::GetAtt": [
-                        "TestFunctionF2BAB7D5",
-                        "Arn"
-                      ]
-                    },
-                    "principal": "events.amazonaws.com",
-                    "sourceArn": {
-                      "Fn::GetAtt": [
-                        "RunEvery1Minute437F0A9B",
-                        "Arn"
-                      ]
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "@aws-cdk/aws-lambda.CfnPermission",
-                  "version": "1.117.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/aws-events.Rule",
-              "version": "1.117.0"
-            }
-          },
-          "testLoggroup": {
-            "id": "testLoggroup",
-            "path": "Test-Lambda-Stack/testLoggroup",
-            "children": {
-              "Resource": {
-                "id": "Resource",
-                "path": "Test-Lambda-Stack/testLoggroup/Resource",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
-                  "aws:cdk:cloudformation:props": {
-                    "logGroupName": {
-                      "Fn::Join": [
-                        "",
-                        [
-                          "/aws/lambda/",
-                          {
-                            "Ref": "TestFunctionF2BAB7D5"
-                          }
-                        ]
-                      ]
-                    },
-                    "retentionInDays": 1
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "@aws-cdk/aws-logs.CfnLogGroup",
-                  "version": "1.117.0"
-                }
-              }
-            },
-            "constructInfo": {
-              "fqn": "@aws-cdk/aws-logs.LogGroup",
               "version": "1.117.0"
             }
           }

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from aws_cdk import core
 
-from serverless_app_stacks.custom_lambda import CustomLambdaStack
+from serverless_app_stacks.s3_list_dynamodb import S3listDynamodbStack
 
 # from resource_stacks.customvpc_stack import CustomVpcStack
 # from resource_stacks.iamuser_stack import CustomIamUserStack
@@ -24,6 +24,7 @@ env = core.Environment(region = "ap-southeast-2", account = "275239396717")
 #     description = "Custom RDS DataBase")
 
 # Lambda Stack
-Lambda_Stack = CustomLambdaStack(app, "Test-Lambda-Stack")
+Lambda_Stack = S3listDynamodbStack(app, "List-S3-Buckets-Into-Dynamodb",
+    description = "Whatever")
 
 app.synth()

@@ -7,144 +7,148 @@
         "file": "tree.json"
       }
     },
-    "Test-Lambda-Stack": {
+    "List-S3-Buckets-Into-Dynamodb": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "Test-Lambda-Stack.template.json",
+        "templateFile": "List-S3-Buckets-Into-Dynamodb.template.json",
         "validateOnSynth": false
       },
       "metadata": {
-        "/Test-Lambda-Stack/Test Function/ServiceRole/Resource": [
+        "/List-S3-Buckets-Into-Dynamodb/S3AssetTable": [
           {
-            "type": "aws:cdk:logicalId",
-            "data": "TestFunctionServiceRole8D1C12F8",
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "S3AssetTable4207B402"
+            },
             "trace": [
-              "new Role (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
-              "new Function (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:80:35)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9443:46)",
+              "ConstructNode.addMetadata (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:405:62)",
+              "new Table (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:483:23)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Test-Lambda-Stack/Test Function/Resource": [
+        "/List-S3-Buckets-Into-Dynamodb/S3AssetTable/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TestFunctionF2BAB7D5",
+            "data": "S3AssetTable4207B402",
             "trace": [
-              "new Function (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:136:26)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9443:46)",
+              "new Table (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:456:22)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Test-Lambda-Stack/SixPmRule/Resource": [
+        "/List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SixPmRuleA9CDDF5C",
+            "data": "ListS3DynamodbFunctionServiceRole87D3DA44",
             "trace": [
-              "new Rule (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events\\lib\\rule.js:34:26)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9443:46)",
+              "new Role (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "new Function (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:80:35)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Test-Lambda-Stack/SixPmRule/AllowEventRuleTestLambdaStackTestFunction8B2B764A": [
+        "/List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SixPmRuleAllowEventRuleTestLambdaStackTestFunction8B2B764A0F9AA2D2",
+            "data": "ListS3DynamodbFunctionServiceRoleDefaultPolicy949414EF",
             "trace": [
-              "Function.addPermission (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:42:9)",
-              "Object.addLambdaPermission (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events-targets\\lib\\util.js:63:17)",
-              "LambdaFunction.bind (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events-targets\\lib\\lambda.js:27:16)",
-              "Rule.addTarget (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events\\lib\\rule.js:87:36)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7970:134",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8582:24)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7970:107",
-              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8563:28)",
-              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7970:34)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9443:46)",
+              "new Policy (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:56:26)",
+              "Role.addToPrincipalPolicy (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:209:34)",
+              "Function.addToPrincipal (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:90:65)",
+              "Table.combinedGrant (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:384:35)",
+              "Table.grantWriteData (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:156:21)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Test-Lambda-Stack/RunEvery1Minute/Resource": [
+        "/List-S3-Buckets-Into-Dynamodb/List-S3-Dynamodb-Function/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "RunEvery1Minute437F0A9B",
+            "data": "ListS3DynamodbFunction2E68382F",
             "trace": [
-              "new Rule (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events\\lib\\rule.js:34:26)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9443:46)",
+              "new Function (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:136:26)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Test-Lambda-Stack/RunEvery1Minute/AllowEventRuleTestLambdaStackTestFunction8B2B764A": [
+        "/List-S3-Buckets-Into-Dynamodb/RunEveryWeek/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "RunEvery1MinuteAllowEventRuleTestLambdaStackTestFunction8B2B764A4103BFCC",
+            "data": "RunEveryWeek22A7B598",
             "trace": [
-              "Function.addPermission (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:42:9)",
-              "Object.addLambdaPermission (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events-targets\\lib\\util.js:63:17)",
-              "LambdaFunction.bind (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events-targets\\lib\\lambda.js:27:16)",
-              "Rule.addTarget (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-events\\lib\\rule.js:87:36)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7970:134",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8582:24)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7970:107",
-              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8563:28)",
-              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7970:34)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9443:46)",
+              "new Rule (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-events\\lib\\rule.js:34:26)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ],
-        "/Test-Lambda-Stack/testLoggroup/Resource": [
+        "/List-S3-Buckets-Into-Dynamodb/RunEveryWeek/AllowEventRuleListS3BucketsIntoDynamodbListS3DynamodbFunctionCFB2F046": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "testLoggroup3D662F39",
+            "data": "RunEveryWeekAllowEventRuleListS3BucketsIntoDynamodbListS3DynamodbFunctionCFB2F046329AFBC8",
             "trace": [
-              "new LogGroup (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-VZ39hN\\node_modules\\@aws-cdk\\aws-logs\\lib\\log-group.js:165:26)",
-              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:58",
-              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8582:24)",
-              "Kernel._create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:8154:34)",
-              "Kernel.create (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:7895:29)",
-              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9479:36)",
-              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9442:22)",
-              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp5sishg62\\lib\\program.js:9443:46)",
+              "Function.addPermission (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:42:9)",
+              "Object.addLambdaPermission (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-events-targets\\lib\\util.js:63:17)",
+              "LambdaFunction.bind (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-events-targets\\lib\\lambda.js:27:16)",
+              "Rule.addTarget (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\jsii-kernel-IYtF40\\node_modules\\@aws-cdk\\aws-events\\lib\\rule.js:87:36)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8582:24)",
+              "C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\ESAKKI~1\\AppData\\Local\\Temp\\tmp6khw4akt\\lib\\program.js:9443:46)",
               "processImmediate (internal/timers.js:464:21)"
             ]
           }
         ]
       },
-      "displayName": "Test-Lambda-Stack"
+      "displayName": "List-S3-Buckets-Into-Dynamodb"
     }
   }
 }
